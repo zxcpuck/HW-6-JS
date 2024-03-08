@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+// - Знайти та вивести довижину настипних стрінгових значень 'hello world', 'lorem ipsum', 'javascript is cool'
+//     let strings = ['hello world!', 'lorem ipsum', 'javascript is cool'];
+//     strings.forEach(str => console.log(str.length));
+
+//   First variant - Перевести до великого регістру наступні стрінгові значення 'hello world', 'lorem ipsum', 'javascript is cool'
+//     console.log('hello world!'.toUpperCase(), ', lorem ipsum'.toUpperCase(), ', javascript is cool'.toUpperCase())
+
+//  Second variant - Перевести до великого регістру наступні стрінгові значення 'hello world', 'lorem ipsum', 'javascript is cool'
+//     let toUpperCase = ['hello world!', 'lorem ipsum', 'javascript is cool'].map(arr=>arr.toUpperCase())
+//     console.log(toUpperCase)
+
+//  - Перевести до нижнього регістру настипні стрінгові значення 'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
+//     let toLowerCase = ['HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'].map(lower=>lower.toLowerCase())
+//     console.log(toLowerCase)
+
+// - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
+
+    // let str = ' dirty string   '
+    // console.log(str.substring(1, 13));
+
+//  - Напишіть функцію stringToArray(str), яка перетворює рядок на масив слів.let str = 'Ревуть воли як ясла повні';let arr = stringToArray(str); ['Ревуть', 'воли', 'як', 'ясла', 'повні']
+//     let arrayOfWords = 'Ревуть воли як ясла повні';
+//     let split = arrayOfWords.split(' ');
+//     console.log(split)
+
+//  - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві на стрінгові.
+//     let myArray = [10,8,-7,55,987,-1011,0,1050,0];
+//     let str = myArray.map(myArray=> String(myArray));
+//     console.log(str)
+
+//   -- відсортувати його за спаданням за monthDuration
+
+//     function sortArray(array,direction){
+//         if (direction === 'ascending'){
+//             return array.slice().sort((a,b) => a-b);
+//         } else if (direction === 'descending'){
+//             return array.slice().sort((a,b) => b-a);
+//         } else  {
+//             console.log('Fuck ur mother')
+//             return array;
+//         }
+//     }
+//
+//     let array = [11, 21, 3];
+// console.log(sortArray(array,'ascending'));
+// console.log(sortArray(array,'descending'))
+
+//
+
+// let coursesAndDurationArray = [
+//     {title: 'JavaScript Complex', monthDuration: 5},
+//     {title: 'Java Complex', monthDuration: 6},
+//     {title: 'Python Complex', monthDuration: 6},
+//     {title: 'QA Complex', monthDuration: 4},
+//     {title: 'FullStack', monthDuration: 7},
+//     {title: 'Frontend', monthDuration: 4}
+// ];
+//
+// let idk = coursesAndDurationArray.slice().sort((a,b) => a.monthDuration - b.monthDuration);
+// console.log(idk)
+
+// let coursesAndDurationArray2 = [
+//     {title: 'JavaScript Complex', monthDuration: 5},
+//     {title: 'Java Complex', monthDuration: 6},
+//     {title: 'Python Complex', monthDuration: 6},
+//     {title: 'QA Complex', monthDuration: 4},
+//     {title: 'FullStack', monthDuration: 7},
+//     {title: 'Frontend', monthDuration: 4}
+// ];
+//
+// let idk2 = coursesAndDurationArray2.slice().filter(duration => duration.monthDuration>5)
+// console.log(idk2)
+
+// let coursesAndDurationArray3 = [
+//     {title: 'JavaScript Complex', monthDuration: 5},
+//     {title: 'Java Complex', monthDuration: 6},
+//     {title: 'Python Complex', monthDuration: 6},
+//     {title: 'QA Complex', monthDuration: 4},
+//     {title: 'FullStack', monthDuration: 7},
+//     {title: 'Frontend', monthDuration: 4}
+// ];
+//
+// let change = coursesAndDurationArray3.map((crs,index)=>{
+//     return {
+//         id : index +1,
+//         TypeOfDevelopment : crs.title,
+//         Duration : crs.monthDuration
+//     };
+// });
+// console.log(change)
+
+
+let allCards = [
+    '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥', 'A♥',
+    '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦', 'A♦',
+    '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣', 'A♣',
+    '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠', 'A♠'
+];
+
+let tyz = allCards.find( card => card === 'A♠');
+console.log('Туз - ' + tyz)
+
+let sixes = allCards.filter(card => card.startsWith('6'));
+console.log('Vsi shistirku - ' + sixes);
+
+let redCards = allCards.filter(card => card.includes('♥') || card.includes('♦'));
+console.log('Vsi chervoni kartu - ' + redCards);
+
+let bubaCards = allCards.filter(card => card.includes('♦'));
+console.log('Vsi bubni kartu - ' + bubaCards);
+
+let hightMMR = allCards.filter(card => card.includes('9') || card.includes('10') || card.includes('J') || card.includes('Q') || card.includes('K') || card.includes('A'))
+console.log(hightMMR);
+
+let arrayOfSpades = allCards.filter(card => card.includes('♠'))
+console.log(arrayOfSpades);
+
+let arrayOfDiamonds = allCards.filter(card => card.includes('♦'))
+console.log(arrayOfDiamonds);
+
+let arrayOfHearts = allCards.filter(card => card.includes('♥'))
+console.log(arrayOfHearts);
+
+let arrayOfClubs = allCards.filter(card => card.includes('♣'))
+console.log(arrayOfClubs);
+
+let coursesArray = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    }]
+
+let noneArray = coursesArray.some(course => course.modules.includes('saas'));
+
+if (noneArray){
+    console.log('true')
+}else{
+    console.log('false')
+}
+
+// let SAAS = coursesArray.filter(course => course.modules.includes('saas'));
+// console.log(SAAS)
+
+let noneArray2 = coursesArray.some(course => course.modules.includes('docker'));
+
+if (noneArray2){
+    console.log('true')
+}else{
+    console.log('false')
+}
+</script>
+</body>
+</html>
